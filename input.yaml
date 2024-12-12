@@ -1,0 +1,37 @@
+# Пример 1: Конфигурация сети
+network:
+  name: local_network
+  ip_range:
+    - 192.168.0.1
+    - 192.168.0.255
+  settings:
+    gateway: 192.168.0.1
+    dns_servers:
+      - 8.8.8.8
+      - 8.8.4.4
+    dhcp: true
+
+# Пример 2: Конфигурация сервера
+server:
+  name: web_server
+  host: 127.0.0.1
+  ports:
+    - 80
+    - 443
+  environment:
+    APP_ENV: production
+    DEBUG: false
+
+# Пример ссылки
+application:
+  database: &db_settings
+    host: localhost
+    port: 5432
+    username: admin
+    password: secret
+  app1:
+    <<: *db_settings
+    database_name: app1_db
+  app2:
+    <<: *db_settings
+    database_name: app2_db

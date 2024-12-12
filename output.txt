@@ -1,0 +1,83 @@
+constant_1: begin
+ name := local_network;
+ ip_range := ( 192.168.0.1 192.168.0.255 );
+ settings := begin
+ gateway := 192.168.0.1;
+ dns_servers := ( 8.8.8.8 8.8.4.4 );
+ dhcp := True;
+end;
+end
+constant_2: begin
+ name := web_server;
+ host := 127.0.0.1;
+ ports := ( 80 443 );
+ environment := begin
+ APP_ENV := production;
+ DEBUG := False;
+end;
+end
+constant_3: begin
+ database := begin
+ host := localhost;
+ port := 5432;
+ username := admin;
+ password := secret;
+end;
+ app1 := begin
+ host := localhost;
+ port := 5432;
+ username := admin;
+ password := secret;
+ database_name := app1_db;
+end;
+ app2 := begin
+ host := localhost;
+ port := 5432;
+ username := admin;
+ password := secret;
+ database_name := app2_db;
+end;
+end
+
+begin
+ network := begin
+ name := local_network;
+ ip_range := ( 192.168.0.1 192.168.0.255 );
+ settings := begin
+ gateway := 192.168.0.1;
+ dns_servers := ( 8.8.8.8 8.8.4.4 );
+ dhcp := True;
+end;
+end;
+ server := begin
+ name := web_server;
+ host := 127.0.0.1;
+ ports := ( 80 443 );
+ environment := begin
+ APP_ENV := production;
+ DEBUG := False;
+end;
+end;
+ application := begin
+ database := begin
+ host := localhost;
+ port := 5432;
+ username := admin;
+ password := secret;
+end;
+ app1 := begin
+ host := localhost;
+ port := 5432;
+ username := admin;
+ password := secret;
+ database_name := app1_db;
+end;
+ app2 := begin
+ host := localhost;
+ port := 5432;
+ username := admin;
+ password := secret;
+ database_name := app2_db;
+end;
+end;
+end
