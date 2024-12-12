@@ -55,6 +55,17 @@
 2. Установите необходимые зависимости:
    ```bash
    pip install -r requirements.txt
-=======
+   ```
+3. Запустите инструмент для конвертации:
+```bash
+python main.py --input path_to_yaml_file.yaml --output output_file.txt
+```
+## Примеры использования
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
->>>>>>> origin/master
+## Результаты прогона тестов
+![img_4.png](img_4.png)
+
